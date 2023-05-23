@@ -1,0 +1,5 @@
+FROM bellsoft/liberica-openjdk-alpine:17.0.6 as BuildProject
+COPY ./java ./src
+RUN mkdir ./out
+RUN javac -sourcepath ./src -d out src/ru/math/main/Main.java
+CMD java -classpath ./out ru.math.main.Main
